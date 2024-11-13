@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Motos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Barra de navegación con opciones de compra -->
+    <nav class="navbar">
+      <h1>Catálogo de Motos</h1>
+      <div class="nav-buttons">
+        <button onclick="cancelarCompra()">Cancelar Compra</button>
+        <button onclick="completarCompra()">Completar Compra</button>
+      </div>
+    </nav>
+
+    <!-- Sección de Filtros -->
+    <section class="filtros">
+      <label for="filtroCategoria">Categoría:</label>
+      <select id="filtroCategoria">
+        <option value="todos">Todas</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Naked">Naked</option>
+        <option value="Deportiva">Deportiva</option>
+        <option value="Scooter">Scooter</option>
+        <option value="Cruiser">Cruiser</option>
+        <option value="Retro">Retro</option>
+        <option value="Off-road">Off-road</option>
+        <option value="Electrica">Eléctrica</option>
+      </select>
+
+      <label for="filtroTipo">Tipo:</label>
+      <select id="filtroTipo">
+        <option value="todos">Todos</option>
+        <option value="manual">Manual</option>
+        <option value="automatica">Automática</option>
+        <option value="semiautomatica">Semiautomática</option>
+      </select>
+
+      <button onclick="filtrarProductos()">Filtrar</button>
+      <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+    </section>
+
+    <!-- Contenedor de productos con scroll infinito -->
+    <main class="main-container">
+      <!-- Contenedor de la lista de productos -->
+      <div id="productosLista" class="productos-lista">
+        <!-- Las motos se cargarán aquí -->
+      </div>
+
+      <!-- Sección de Ver Detalle de un producto -->
+      <div id="detalleProducto" class="detalle-producto hidden">
+        <button class="cerrar-detalle" onclick="cerrarDetalle()">X</button>
+        <h2 id="detalleNombre">Detalles del Producto</h2>
+        <img
+          id="detalleImagen"
+          src=""
+          alt="Imagen de la moto"
+          class="detalle-imagen"
+        />
+        <p id="detalleMarca"></p>
+        <p id="detallePrecio"></p>
+        <p id="detalleCategoria"></p>
+        <p id="detalleTipo"></p>
+        <label for="cantidadProducto">Cantidad:</label>
+        <input type="number" id="cantidadProducto" min="1" max="10" value="1" />
+        <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+      </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
